@@ -6,8 +6,8 @@ from django.db import models
 class added_tasks(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
-    created_at_date = models.DateTimeField(default=date.today)
-    created_at_time = models.TimeField(default=datetime.now)
+    created_at_date = models.DateField(default=date.today)
+    created_at_time = models.TimeField(default=lambda: datetime.now().time())
 
     def __str__(self):
         return f"{self.name}"
@@ -15,10 +15,10 @@ class added_tasks(models.Model):
 class in_progress_tasks(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
-    created_at_date = models.DateTimeField()
+    created_at_date = models.DateField()
     created_at_time = models.TimeField()
-    in_progress_at_date = models.DateTimeField(default=date.today)
-    in_progress_at_time = models.TimeField(default=datetime.now)
+    in_progress_at_date = models.DateField(default=date.today)
+    in_progress_at_time = models.TimeField(default=lambda: datetime.now().time())
 
     def __str__(self):
         return f"{self.name}"
@@ -26,12 +26,12 @@ class in_progress_tasks(models.Model):
 class completed_tasks(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
-    created_at_date = models.DateTimeField()
+    created_at_date = models.DateField()
     created_at_time = models.TimeField()
-    in_progress_at_date = models.DateTimeField()
+    in_progress_at_date = models.DateField()
     in_progress_at_time = models.TimeField()
-    completed_at_date = models.DateTimeField(default=date.today)
-    completed_at_time = models.TimeField(default=datetime.now)
+    completed_at_date = models.DateField(default=date.today)
+    completed_at_time = models.TimeField(default=lambda: datetime.now().time())
 
     def __str__(self):
         return f"{self.name}"
