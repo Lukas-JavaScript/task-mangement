@@ -33,5 +33,29 @@
 		<h1>Task Management</h1>
 	</header>
 	<h1>Task List:</h1>
+	<h1>Hinzugefügte Aufgaben:</h1>
+	<ul>
+		{% for task in added_tasks %}
+			<li>{{ task.name }} - {{ task.description }}</li>
+		{% empty %}
+			<li>Keine Aufgaben vorhanden.</li>
+		{% endfor %}
+	</ul>
+	<h1>In Bearbeitung:</h1>
+	<ul>
+		{% for task in in_progress_tasks %}
+			<li>{{ task.name }} - {{ task.description }}</li>
+		{% empty %}
+			<li>Keine Aufgaben in Bearbeitung.</li>
+		{% endfor %}
+	</ul>
+	<h1>Abgeschlossene Aufgaben:</h1>
+	<ul>
+		{% for task in completed_tasks %}
+			<li>{{ task.name }} - {{ task.description }}</li>
+		{% empty %}
+			<li>Keine abgeschlossenen Aufgaben.</li>
+		{% endfor %}
+	</ul>
   </body>
 </html>
