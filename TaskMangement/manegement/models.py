@@ -1,7 +1,6 @@
 from datetime import date, datetime
 from django.db import models
 
-
 def current_time():
     return datetime.now().time()
 # Create your models here.
