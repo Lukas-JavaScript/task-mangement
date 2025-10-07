@@ -19,3 +19,13 @@ class in_progress_tasks(models.Model):
     description = models.TextField()
     in_progress_at_date = models.DateTimeField(default=date.today)
     in_progress_at_time = models.TimeField(default=datetime.now)
+
+class completed_tasks(models.Model):
+    name = models.CharField(max_length=200)
+    created_at_date = models.DateTimeField()
+    created_at_time = models.TimeField()
+    description = models.TextField()
+    in_progress_at_date = models.DateTimeField()
+    in_progress_at_time = models.TimeField()
+    completed_at_date = models.DateTimeField(default=date.today)
+    completed_at_time = models.TimeField(default=datetime.now)
