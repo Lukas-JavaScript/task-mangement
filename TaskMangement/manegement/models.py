@@ -36,3 +36,18 @@ class completed_tasks(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+
+class removed_tasks(models.Model):
+    name = models.CharField(max_length=200)
+    description = models.TextField()
+    created_at_date = models.DateField()
+    created_at_time = models.TimeField()
+    in_progress_at_date = models.DateField()
+    in_progress_at_time = models.TimeField()
+    completed_at_date = models.DateField()
+    completed_at_time = models.TimeField()
+    removed_at_date = models.DateField(default=date.today)
+    removed_at_time = models.TimeField(default=current_time)
+
+    def __str__(self):
+        return f"{self.name}"
