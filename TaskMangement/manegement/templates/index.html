@@ -74,7 +74,15 @@
       {% empty %}
       <li>Keine abgeschlossenen Aufgaben.</li>
       {% endfor %}
-      <button class="add">+</button>
+      <button onclick="addTask()" class="add">+</button>
+      <script>
+        function addTask() {
+	window.location.href = "/add_task/";
+        }
+      </script>
+    <script>
+      const csrfToken = "{{ csrf_token }}";
+    </script>
     </ul>
   </body>
 </html>
