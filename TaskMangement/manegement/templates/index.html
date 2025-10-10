@@ -76,13 +76,35 @@
       {% endfor %}
       <button onclick="addTask()" class="add">+</button>
       <script>
-        function addTask() {
-	window.location.href = "/add_task/";
+        let itemName;
+        let formData;
+        function addItem() {
+          item = prompt("Neues Element hinzufügen:");
+          if (item === null || item.trim() === "") {
+            return; // Abbrechen, wenn kein Name eingegeben wurde
+          }
+          itemName = entferneUmlaute(item);
+          formData = new FormData();
+          formData.append("itemName", itemName);
+          formData.append("subject", "add");
+          formData.append("csrfmiddlewaretoken", csrfToken);
+          upload(formData);
+        }
+        function upload(formData) {
+          fetch("/management/", {
+            method: "POST",
+            body: formData,
+          }).then(() => {
+            reload();
+          });
+        }
+        function reload() {
+          window.location.reload();
         }
       </script>
-    <script>
-      const csrfToken = "{{ csrf_token }}";
-    </script>
+      <script>
+        const csrfToken = "{{ csrf_token }}";
+      </script>
     </ul>
   </body>
 </html>
