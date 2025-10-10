@@ -14,7 +14,10 @@
     <h1>Hinzugefügte Aufgaben:</h1>
     <ul>
       {% for task in added_tasks %}
-      <li>{{ task.name }} - {{ task.description }}</li>
+      <li>
+        {{ task.name }} - {{ task.description }}
+        <img src="{% static 'img/arrow.svg' %}" class="arrow" alt="" />
+      </li>
       {% empty %}
       <li>Keine Aufgaben vorhanden.</li>
       {% endfor %}
