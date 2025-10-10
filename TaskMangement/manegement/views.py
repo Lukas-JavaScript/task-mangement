@@ -7,7 +7,7 @@ def home(request):
     if request.method == 'POST':
         if request.POST.get('subject') == 'add':
             name = request.POST.get('name')
-            description = request.POST.get('description'):
+            description = request.POST.get('description')
             add_task(name, description)
     added = added_tasks.objects.all()
     in_progress = in_progress_tasks.objects.all()
