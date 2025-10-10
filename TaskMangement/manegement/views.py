@@ -6,9 +6,9 @@ from .fn import add_task
 def home(request):
     if request.method == 'POST':
         if request.POST.get('subject') == 'add':
-            name = request.POST.get('name')
+            headline = request.POST.get('headline')
             description = request.POST.get('description')
-            add_task(name, description)
+            add_task(headline, description)
     added = added_tasks.objects.all()
     in_progress = in_progress_tasks.objects.all()
     completed = completed_tasks.objects.all()
