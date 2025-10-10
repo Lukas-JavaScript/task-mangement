@@ -5,62 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task Management</title>
     <style>
-	body {
-		margin: 0;
-		padding: 0;
-	}
-	header {
-		background-color: #4CAF50;
-		color: white;
-		padding: 20px;
-		font-size: 26px;
-		text-align: center;
-	}
-	header h1 {
-		margin: 0;
-		text-align: center;
-	}
-	h1 {
-		text-align: center;
-		margin: 40px;
-		font-size: 3rem;
-		color: #333;
-	}
-	li {
-		font-size: 1.5rem;
-		color: #555;
-		margin: 10px 0;
-	}
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #4caf50;
+        color: white;
+        padding: 20px;
+        font-size: 26px;
+        text-align: center;
+      }
+      header h1 {
+        margin: 0;
+        text-align: center;
+      }
+      h1 {
+        text-align: center;
+        margin: 40px;
+        font-size: 3rem;
+        color: #333;
+      }
+      li {
+        font-size: 1.5rem;
+        color: #555;
+        margin: 10px 0;
+      }
+      .add {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+        background-color: blue;
+        border: unset;
+        font-size: 32px;
+        color: white;
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+      }
     </style>
   </head>
   <body>
-	<header>
-		<h1>Task Management</h1>
-	</header>
-	<h1>Task List:</h1>
-	<h1>Hinzugefügte Aufgaben:</h1>
-	<ul>
-		{% for task in added_tasks %}
-			<li>{{ task.name }} - {{ task.description }}</li>
-		{% empty %}
-			<li>Keine Aufgaben vorhanden.</li>
-		{% endfor %}
-	</ul>
-	<h1>In Bearbeitung:</h1>
-	<ul>
-		{% for task in in_progress_tasks %}
-			<li>{{ task.name }} - {{ task.description }}</li>
-		{% empty %}
-			<li>Keine Aufgaben in Bearbeitung.</li>
-		{% endfor %}
-	</ul>
-	<h1>Abgeschlossene Aufgaben:</h1>
-	<ul>
-		{% for task in completed_tasks %}
-			<li>{{ task.name }} - {{ task.description }}</li>
-		{% empty %}
-			<li>Keine abgeschlossenen Aufgaben.</li>
-		{% endfor %}
-	</ul>
+    <header>
+      <h1>Task Management</h1>
+    </header>
+    <h1>Task List:</h1>
+    <h1>Hinzugefügte Aufgaben:</h1>
+    <ul>
+      {% for task in added_tasks %}
+      <li>{{ task.name }} - {{ task.description }}</li>
+      {% empty %}
+      <li>Keine Aufgaben vorhanden.</li>
+      {% endfor %}
+    </ul>
+    <h1>In Bearbeitung:</h1>
+    <ul>
+      {% for task in in_progress_tasks %}
+      <li>{{ task.name }} - {{ task.description }}</li>
+      {% empty %}
+      <li>Keine Aufgaben in Bearbeitung.</li>
+      {% endfor %}
+    </ul>
+    <h1>Abgeschlossene Aufgaben:</h1>
+    <ul>
+      {% for task in completed_tasks %}
+      <li>{{ task.name }} - {{ task.description }}</li>
+      {% empty %}
+      <li>Keine abgeschlossenen Aufgaben.</li>
+      {% endfor %}
+      <button class="add">+</button>
+    </ul>
   </body>
 </html>

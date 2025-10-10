@@ -7,7 +7,6 @@ def home(request):
     added = added_tasks.objects.all()
     in_progress = in_progress_tasks.objects.all()
     completed = completed_tasks.objects.all()
-
     return render(request, 'index.html', {
         'added_tasks': added,
         'in_progress_tasks': in_progress,
