@@ -17,6 +17,13 @@ function addTask() {
   formData.append("csrfmiddlewaretoken", csrfToken);
   upload(formData);
 }
+setInProgress = (id) => {
+  formData = new FormData();
+  formData.append("id", id);
+  formData.append("subject", "set_in_progress");
+  formData.append("csrfmiddlewaretoken", csrfToken);
+  upload(formData);
+};
 function upload(formData) {
   fetch("/management/", {
     method: "POST",
