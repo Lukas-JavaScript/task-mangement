@@ -1,9 +1,14 @@
 from django.shortcuts import render
 from .models import added_tasks, in_progress_tasks, completed_tasks
-
+from .fn import add_task
 
 # Create your views here.
 def home(request):
+    if request.method == 'POST':
+        if request.POST.get('subject') == 'add':
+            name = request.POST.get('name')
+            description = request.POST.get('description'):
+            add_task(name, description)
     added = added_tasks.objects.all()
     in_progress = in_progress_tasks.objects.all()
     completed = completed_tasks.objects.all()

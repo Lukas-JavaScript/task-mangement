@@ -83,6 +83,7 @@
           if (item === null || item.trim() === "") {
             return; // Abbrechen, wenn kein Name eingegeben wurde
           }
+	
           itemName = entferneUmlaute(item);
           formData = new FormData();
           formData.append("itemName", itemName);
