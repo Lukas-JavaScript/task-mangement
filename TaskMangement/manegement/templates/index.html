@@ -44,7 +44,10 @@
     <h1>Abgeschlossene Aufgaben:</h1>
     <ul>
       {% for task in completed_tasks %}
-      <li>{{ task.name }} - {{ task.description }}</li>
+      <li>
+        {{ task.name }} - {{ task.description }}
+        <img src='{% static "remove.svg" %}' class="remove" alt="" />
+      </li>
       {% empty %}
       <li>Keine abgeschlossenen Aufgaben.</li>
       {% endfor %}
