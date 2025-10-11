@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import added_tasks, in_progress_tasks, completed_tasks
-from .fn import add_task, set_in_progress, set_in_compleated
+from .fn import add_task, set_in_progress, set_in_compleated, remove_task 
 
 # Create your views here.
 def Home(request):
@@ -15,6 +15,9 @@ def Home(request):
         if request.POST.get('subject') == 'set_in_compleated':
             task_id = request.POST.get('id')
             set_in_compleated(task_id)
+        if request.POST.get('subject') == 'remove':
+            id = request.POST.get('id')
+            remove_task(id)
     added = added_tasks.objects.all()
     in_progress = in_progress_tasks.objects.all()
     completed = completed_tasks.objects.all()

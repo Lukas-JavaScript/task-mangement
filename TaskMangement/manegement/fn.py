@@ -23,3 +23,14 @@ def set_in_compleated(task_id):
                                       in_progress_at_time=task.in_progress_at_time)
     task.delete()
 
+def remove_task(id):
+    task = completed_tasks.objects.get(id=id)
+    removed_tasks.objects.create(name=task.name,
+                                  description=task.description,
+                                  created_at_date=task.created_at_date,
+                                  created_at_time=task.created_at_time,
+                                  in_progress_at_date=task.in_progress_at_date,
+                                  in_progress_at_time=task.in_progress_at_time,
+                                  completed_at_date=task.completed_at_date,
+                                  completed_at_time=task.completed_at_time)
+    task.delete()
