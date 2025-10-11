@@ -24,6 +24,13 @@ setInProgress = (id) => {
   formData.append("csrfmiddlewaretoken", csrfToken);
   upload(formData);
 };
+function setInCompleated(id) {
+  formData = new FormData();
+  formData.append("id", id);
+  formData.append("subject", "set_in_compleated");
+  formData.append("csrfmiddlewaretoken", csrfToken);
+  upload(formData);
+}
 function upload(formData) {
   fetch("/management/", {
     method: "POST",
