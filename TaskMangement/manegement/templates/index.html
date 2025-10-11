@@ -46,7 +46,7 @@
       {% for task in completed_tasks %}
       <li>
         {{ task.name }} - {{ task.description }}
-        <img src="{% static 'img/remove.svg' %}" class="remove" alt="" />
+        <img src="{% static 'img/remove.svg' %}" class="remove" onclick="remove('{{ task.id }}')" alt="" />
       </li>
       {% empty %}
       <li>Keine abgeschlossenen Aufgaben.</li>

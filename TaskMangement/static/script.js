@@ -31,6 +31,13 @@ setInCompleated = (id) => {
   formData.append("csrfmiddlewaretoken", csrfToken);
   upload(formData);
 }
+remove = (id) => {
+  formData = new FormData();
+  formData.append("id", id);
+  formData.append("subject", "remove");
+  formData.append("csrfmiddlewaretoken", csrfToken);
+  upload(formData);
+}
 async function upload(formData) {
   await fetch("/management/", {
     method: "POST",
