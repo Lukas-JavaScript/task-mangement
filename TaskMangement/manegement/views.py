@@ -3,7 +3,7 @@ from .models import added_tasks, in_progress_tasks, completed_tasks
 from .fn import add_task, set_in_progress, set_in_compleated
 
 # Create your views here.
-def home(request):
+def Home(request):
     if request.method == 'POST':
         if request.POST.get('subject') == 'add':
             headline = request.POST.get('headline')

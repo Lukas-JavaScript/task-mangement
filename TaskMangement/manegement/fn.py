@@ -19,7 +19,7 @@ def set_in_compleated(task_id):
                                       description=task.description,
                                       created_at_date=task.created_at_date,
                                       created_at_time=task.created_at_time,
-                                      in_progress_date=task.in_progress_at_date,
-                                      in_progress_time=task.in_progress_at_time)
+                                      in_progress_at_date=task.in_progress_at_date,
+                                      in_progress_at_time=task.in_progress_at_time)
     task.delete()
 
