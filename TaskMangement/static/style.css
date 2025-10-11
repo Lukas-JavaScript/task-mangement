@@ -53,3 +53,11 @@ li {
   filter: brightness(0.8);
   cursor: pointer;
 }
+
+.remove {
+  height: 2rem;
+  width: 2rem;
+  margin-left: 8px;
+  border: none;
+  vertical-align: middle;
+}
