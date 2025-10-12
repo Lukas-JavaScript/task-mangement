@@ -61,3 +61,10 @@ li {
   border: none;
   vertical-align: middle;
 }
+.comments {
+  display: grid;
+  justify-content: center;
+  margin-left: 8px;
+  border: none;
+  vertical-align: middle;
+}
