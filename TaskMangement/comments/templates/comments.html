@@ -8,12 +8,16 @@
     <link rel="stylesheet" href="{% static 'style.css' %}" />
   </head>
   <body>
-	<h1>Kommentare:</h1>
-	<p>Hier können Sie Ihre Kommentare hinterlassen.</p>
-	<div>
-		<h2>Kommentar 1</h2>
-		<p>Dies ist der Inhalt von Kommentar 1.</p>
-	</div>
-	<button class="add">Kommentar hinzufügen</button>
+    <h1>Kommentare:</h1>
+    <p>Hier können Sie Ihre Kommentare hinterlassen.</p>
+    <div>
+      <h2>Kommentar 1</h2>
+      <p>Dies ist der Inhalt von Kommentar 1.</p>
+    </div>
+    <button class="add">Kommentar hinzufügen</button>
+    <script>
+      crftoken = "{{ csrf_token }}";
+    </script>
+    <script src="{% static 'script.js' %}"></script>
   </body>
 </html>
