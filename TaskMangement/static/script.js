@@ -38,6 +38,21 @@ remove = (id) => {
   formData.append("csrfmiddlewaretoken", csrfToken);
   upload(formData);
 }
+async function addComment() {
+  let subject = prompt("Kommentar hinzufügen:");
+  if (subject === null || subject.trim() === "") {
+    return; // Abbrechen, wenn kein Name eingegeben wurde
+  }
+  let description = prompt("Beschreibung hinzufügen (optional):");
+  if (description === null || description.trim() === "") {
+    description = ""; // Beschreibung kann leer sein
+  }
+  formData = new FormData();
+  formData.append("subject", subject);
+  formData.append("description", description); // Beschreibung kann leer sein
+  formData.append("csrfmiddlewaretoken", csrfToken);
+  upload(formData);
+}
 async function upload(formData) {
   await fetch("/management/", {
     method: "POST",

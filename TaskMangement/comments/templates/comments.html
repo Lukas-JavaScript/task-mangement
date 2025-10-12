@@ -18,7 +18,7 @@
     {% empty %}
     <p class="comments">Noch keine Kommentare vorhanden.</p>
     {% endfor %}
-    <button class="add">+</button>
+    <button class="add" onclick="addComment()">+</button>
     <script>
       crftoken = "{{ csrf_token }}";
     </script>
