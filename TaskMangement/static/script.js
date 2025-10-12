@@ -51,7 +51,12 @@ async function addComment() {
   formData.append("subject", subject);
   formData.append("description", description); // Beschreibung kann leer sein
   formData.append("csrfmiddlewaretoken", csrfToken);
-  upload(formData);
+  await fetch("/comments/", {
+    method: "POST",
+    body: formData,
+  }).then(() => {
+    reload();
+  });
 }
 async function upload(formData) {
   await fetch("/management/", {
