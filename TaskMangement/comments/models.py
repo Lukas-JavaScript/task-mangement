@@ -9,3 +9,5 @@ class Comment(models.Model):
     description = models.TextField()
     created_at_date = models.DateField(default=date.today)
     created_at_time = models.TimeField(default=current_time)
+    def __str__(self):
+        return self.subject
