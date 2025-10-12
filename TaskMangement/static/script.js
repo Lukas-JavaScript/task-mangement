@@ -50,7 +50,7 @@ async function addComment() {
   formData = new FormData();
   formData.append("subject", subject);
   formData.append("description", description); // Beschreibung kann leer sein
-  formData.append("csrfmiddlewaretoken", csrfToken);
+  formData.append("csrfmiddlewaretoken", crfToken);
   await fetch("/comments/", {
     method: "POST",
     body: formData,
