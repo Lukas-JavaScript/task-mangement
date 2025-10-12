@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-s_4upauh$n3%l_!8zkuwdfy1u=fznci^+2!r7ohlt8e3cjo34@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 def get_ip_address():
