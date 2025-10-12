@@ -9,11 +9,15 @@
   </head>
   <body>
     <h1>Kommentare:</h1>
-    <p>Hier können Sie Ihre Kommentare hinterlassen.</p>
+    <p class="comments">Hier können Sie Ihre Kommentare hinterlassen.</p>
+    {% for comment in comments %}
     <div class="comments">
-      <h2>Kommentar 1</h2>
-      <p>Dies ist der Inhalt von Kommentar 1.</p>
+      <h2>Kommentar {{ forloop.counter }}: {{ comment.subject }}</h2>
+      <p>{{ comment.description }}</p>
     </div>
+    {% empty %}
+    <p class="comments">Noch keine Kommentare vorhanden.</p>
+    {% endfor %}
     <button class="add">+</button>
     <script>
       crftoken = "{{ csrf_token }}";
