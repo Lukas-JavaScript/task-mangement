@@ -11,10 +11,10 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import socket
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -25,11 +25,24 @@ SECRET_KEY = 'django-insecure-s_4upauh$n3%l_!8zkuwdfy1u=fznci^+2!r7ohlt8e3cjo34@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
+def get_ip_address():
+    try:
+        # Verbindung zu einem externen Server herstellen
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(("8.8.8.8", 80))
+        ip_address = s.getsockname()[0]
+        s.close()
+        return ip_address
+    except Exception as e:
+        return str(e)
+
+print(get_ip_address())
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
+    get_ip_address(),
 ]
-
 
 # Application definition
 
@@ -73,7 +86,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'TaskMangement.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
@@ -83,7 +95,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -103,7 +114,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
@@ -114,7 +124,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
