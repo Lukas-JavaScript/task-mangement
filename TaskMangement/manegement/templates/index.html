@@ -8,6 +8,9 @@
   </head>
   <body>
     <header>
+      <a href="/comments/"> Hier kommentieren </a>
+    </header>
+    <header>
       <h1>Task Management</h1>
     </header>
     <h1>Task List:</h1>
@@ -46,7 +49,12 @@
       {% for task in completed_tasks %}
       <li>
         {{ task.name }} - {{ task.description }}
-        <img src="{% static 'img/remove.svg' %}" class="remove" onclick="remove('{{ task.id }}')" alt="" />
+        <img
+          src="{% static 'img/remove.svg' %}"
+          class="remove"
+          onclick="remove('{{ task.id }}')"
+          alt=""
+        />
       </li>
       {% empty %}
       <li>Keine abgeschlossenen Aufgaben.</li>

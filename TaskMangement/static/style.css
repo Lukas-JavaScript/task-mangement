@@ -1,9 +1,9 @@
-@import url('font/OpenSans/OpenSans.css');
-@import url('font/Abel/abel.css');
+@import url("font/OpenSans/OpenSans.css");
+@import url("font/Abel/abel.css");
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 header {
   background-color: #4caf50;
@@ -21,13 +21,22 @@ h1 {
   margin: 40px;
   font-size: 3rem;
   color: #333;
-  font-family: 'Abel', sans-serif;
+  font-family: "Abel", sans-serif;
 }
 li {
   font-size: 1.5rem;
   color: #555;
   margin: 10px 0;
   display: flex;
+}
+a {
+  text-decoration: none;
+  color: white;
+  font-size: xx-large;
+}
+a:hover {
+  cursor: pointer;
+  animation: all 1s linear;
 }
 .add {
   height: 60px;
@@ -67,4 +76,13 @@ li {
   margin-left: 8px;
   border: none;
   vertical-align: middle;
+}
+
+@keyframes all {
+  from {
+    filter: brightness(0);
+  }
+  to {
+    filter: brightness(0.8);
+  }
 }
