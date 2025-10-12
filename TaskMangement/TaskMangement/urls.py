@@ -17,8 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from manegement.views import Home
+from comments.views import comments
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('management/', Home),
+    path('comments/', comments),
 ]
