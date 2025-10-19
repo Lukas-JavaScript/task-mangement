@@ -76,10 +76,10 @@ get_ip_address(),
 
 Directory structure
 TaskMangement/ # Django project directory
-├── TaskMangement/ # Project configuration (settings, urls, wsgi, etc.)
-├── comments/ # Django app for comments
-├── manegement/ # Django app for task management
-├── static/ # Static files (CSS, JavaScript, images)
-├── staticfiles/ # Target folder for `collectstatic`
-├── db.sqlite3 # SQLite database file
-└── manage.py # Django management script
+###### TaskMangement/ # Project configuration (settings, urls, wsgi, etc.)
+###### comments/ # Django app for comments
+###### manegement/ # Django app for task management
+###### static/ # Static files (CSS, JavaScript, images)
+###### staticfiles/ # Target folder for `collectstatic`
+###### db.sqlite3 # SQLite database file
+###### manage.py # Django management script
