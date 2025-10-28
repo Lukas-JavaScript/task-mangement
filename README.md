@@ -1,6 +1,6 @@
 # TaskMangemen
 
---
+---
 
 TaskMangement is a Django project designed for managing tasks. It consists of two main apps:
 
@@ -65,16 +65,22 @@ sudo python TaskMangement\manage.py runserver 0.0.0.0:8000
 ### Configuration
 
 #### DEBUG
+
 In production, DEBUG must be set to False in the settings.py file.
+
 ---
 #### ALLOWED_HOSTS
+
 Make sure all necessary hosts are included in ALLOWED_HOSTS. Example:
+
 ---
+
 ALLOWED_HOSTS = [
 'localhost',
 '127.0.0.1',
 get_ip_address(),
 ]
+
 ---
 Directory structure
 TaskMangement/ # Django project directory
