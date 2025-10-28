@@ -1,25 +1,27 @@
-TaskMangement
+# TaskMangemen
+
+--
 
 TaskMangement is a Django project designed for managing tasks. It consists of two main apps:
 
-manegement – Handles adding, editing, and deleting tasks.
+##### manegement – Handles adding, editing, and deleting tasks.
 
-comments – Allows adding comments to tasks.
+##### comments – Allows adding comments to tasks.
+---
+### Installation
 
-Installation
-
-Clone the repository:
+#### Clone the repository:
 
 ```bash
 git clone https://github.com/Lukas-JavaScript/task-mangement.git
 cd taskMangement
 ```
 
-Install Python
+#### Install Python
 
 If you haven’t installed Python yet, you need to do so.
 
-Set up a virtual environment:
+#### Set up a virtual environment:
 
 Create and activate a virtual environment:
 
@@ -28,19 +30,19 @@ python -m venv .env
 .\.env\Scripts\activate
 ```
 
-Install dependencies:
+#### Install dependencies:
 
 ```bash
 pip install datetime whitenoise Django
 ```
 
-Migrate the database:
+#### Migrate the database:
 
 ```bash
 python TaskMangement\manage.py migrate
 ```
-
-Run the project
+---
+#### Run the project
 
 Windows:
 
@@ -48,32 +50,32 @@ Windows:
 start.bat
 ```
 
-Linux:
+#### Linux:
 
 ```bash
 sudo python TaskMangement\manage.py runserver 0.0.0.0:8000
 ```
 
-macOS:
+#### macOS:
 
 ```bash
 sudo python TaskMangement\manage.py runserver 0.0.0.0:8000
 ```
+---
+### Configuration
 
-Configuration
-
-DEBUG
+#### DEBUG
 In production, DEBUG must be set to False in the settings.py file.
-
-ALLOWED_HOSTS
+---
+#### ALLOWED_HOSTS
 Make sure all necessary hosts are included in ALLOWED_HOSTS. Example:
-
+---
 ALLOWED_HOSTS = [
 'localhost',
 '127.0.0.1',
 get_ip_address(),
 ]
-
+---
 Directory structure
 TaskMangement/ # Django project directory
 ###### TaskMangement/ # Project configuration (settings, urls, wsgi, etc.)
